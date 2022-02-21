@@ -57,9 +57,9 @@ app.get('/listofitems',(req,resp) =>{
                 })
         .catch(err =>{ 
                 resp.statusCode = 404;
-                console.error('Error exccuting query', err.stack);
+                console.error('Error message is', err.stack);
                 resp.setHeader('Content-Type','text/plain');
-                resp.send('Error executing query' + err.stack);
+                resp.send('Error message is' + err.stack);
         });
 });
 
@@ -88,7 +88,7 @@ app.get('/listofitems',(req,resp) =>{
  *            $ref: "#definitions/itemPut"
  *    responses: 
  *      200:
- *       description: A successfull response
+ *       description: got a successfull response
  * definitions:
  *   itemPut:
  *     type: object
@@ -123,14 +123,14 @@ app.put('/listofitems', (req,resp) =>{
                 else{
                         resp.statusCode = 201;
                         resp.setHeader('Content-Type','text/plain');
-                        resp.send("The agent is not located in the table - Operation  unsuccessful");
+                        resp.send("Operation was  unsuccessful, the item was not found in the table");
                 }
               })
         .catch(err =>{
                 resp.statusCode = 404;
-                console.error('Error exccuting query', err.stack);
+                console.error('Error message is ', err.stack);
                 resp.setHeader('Content-Type','text/plain');
-                resp.send('Error executing query' + err.stack);
+                resp.send('Error message is' + err.stack);
         });
 });
 
@@ -160,7 +160,7 @@ app.put('/listofitems', (req,resp) =>{
  *            $ref: "#definitions/itemPost"
  *    responses:
  *      200:
- *       description: A successfull response
+ *       description: Got a successfull response
  * definitions:
  *   itemPost:
  *     type: object
@@ -193,14 +193,14 @@ app.post('/listofitems',(req,resp) =>{
                 }else{
                         resp.statusCode = 201;
                         resp.setHeader('Content-Type','text/plain');
-                        resp.send('No rows added -Operation unsuccessful');
+                        resp.send('There was no rows added, Operation unsuccessful');
                 }
                })
         .catch(err =>{
                 resp.statusCode = 404;
-                console.error('Error exccuting query', err.stack);
+                console.error('Error message is', err.stack);
                 resp.setHeader('Content-Type','text/plain');
-                resp.send('Error executing query' + err.stack);
+                resp.send('Error message is' + err.stack);
         });
 });
 
@@ -222,7 +222,7 @@ app.post('/listofitems',(req,resp) =>{
  *        $ref: "#/definitions/itemDel"
  *    responses: 
  *      200:
- *       description: A successfull response
+ *       description: Got a successfull response
  * definitions:
  *   itemDel:
  *     type: object
@@ -243,14 +243,14 @@ app.delete('/listofitems',(req,resp) =>{
                 }else{
                         resp.statusCode = 201;
                         resp.setHeader('Content-Type','text/plain');
-                        resp.send('No rows delete - operation unsuccessful');
+                        resp.send('Ther was No rows delete, operation was unsuccessful');
                 }
                })
         .catch(err =>{
                 resp.statusCode = 404;
-                console.error('Error exccuting query', err.stack);
+                console.error('Error message is', err.stack);
                 resp.setHeader('Content-Type','text/plain');
-                resp.send('Error executing query' + err.stack);
+                resp.send('Error message is' + err.stack);
         });
 });
 
@@ -278,7 +278,7 @@ app.delete('/listofitems',(req,resp) =>{
  *            $ref: "#definitions/itemPatch"
  *    responses:
  *      200:
- *       description: A successfull response
+ *       description: Got a successfull response
  * definitions:
  *   itemPatch:
  *     type: object
@@ -321,22 +321,22 @@ app.patch('/listofitems',(req,resp) =>{
                         else{
                             resp.statusCode = 201;
                             resp.setHeader('Content-Type','text/plain');
-                            resp.send("The item is not located in the table - Operation  unsuccessful");
+                            resp.send("Operation  unsuccessful, coudnt find the itenm in the table");
                         }
                     })
                     .catch(err =>{
                         resp.statusCode = 404;
-                        console.error('Error exccuting query', err.stack);
+                        console.error('Error message is', err.stack);
                         resp.setHeader('Content-Type','text/plain');
-                        resp.send('Error executing query' + err.stack);
+                        resp.send('Error message is' + err.stack);
                     });
                 }
               })
         .catch(err =>{
                 resp.statusCode = 404;
-                console.error('Error exccuting query', err.stack);
+                console.error('Error message is', err.stack);
                 resp.setHeader('Content-Type','text/plain');
-                resp.send('Error executing query' + err.stack);
+                resp.send('Error message is' + err.stack);
         });
 });
 
