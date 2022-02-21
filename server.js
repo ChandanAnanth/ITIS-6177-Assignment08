@@ -61,7 +61,6 @@ app.get('/listofitems',(req,resp) =>{
                 resp.setHeader('Content-Type','text/plain');
                 resp.send('Error executing query' + err.stack);
         });
-    //resp.json({"test":"test"});
 });
 
 
